@@ -394,12 +394,12 @@ if st.session_state.current_tab == "🎬 Movie Catalog":
         </div>
         """, unsafe_allow_html=True)
         
-        # REQUIREMENT 1: DIRECT FILTER SECTION (NO EXPANDER / NO HIDE OPTION)
+        # REQUIREMENT 1: DIRECT FILTER SECTION WITH SORTING CONTROL
         st.markdown("### 🍿 Catalog Filters & Search")
         
         search_query = st.text_input("🔍 Search Movies by Title, Director, or Actor", "")
         
-        f_col1, f_col2, f_col3, f_col4 = st.columns(4)
+        f_col1, f_col2, f_col3, f_col4, f_col5 = st.columns(5)
         
         with f_col1:
             selected_genres = st.multiselect("Filter by Genre", options=all_genres)
@@ -414,6 +414,19 @@ if st.session_state.current_tab == "🎬 Movie Catalog":
         with f_col4:
             certificates = sorted([str(x) for x in df['Certificate'].dropna().unique()])
             selected_certs = st.multiselect("Certificate / Age Rating", options=certificates)
+
+        with f_col5:
+            sort_option = st.selectbox(
+                "Sort Movies By",
+                options=[
+                    "Rank (Default)",
+                    "Release Year: Newest First",
+                    "Release Year: Oldest First",
+                    "Duration: Longest First",
+                    "Duration: Shortest First",
+                    "IMDb Rating: Highest First"
+                ]
+            )
 
         # Filter Logic
         filtered_df = df.copy()
@@ -438,6 +451,20 @@ if st.session_state.current_tab == "🎬 Movie Catalog":
         
         if selected_certs:
             filtered_df = filtered_df[filtered_df['Certificate'].isin(selected_certs)]
+
+        # Sorting Logic
+        if sort_option == "Release Year: Newest First":
+            filtered_df = filtered_df.sort_values(by="Released_Year", ascending=False)
+        elif sort_option == "Release Year: Oldest First":
+            filtered_df = filtered_df.sort_values(by="Released_Year", ascending=True)
+        elif sort_option == "Duration: Longest First":
+            filtered_df = filtered_df.sort_values(by="Runtime_Min", ascending=False)
+        elif sort_option == "Duration: Shortest First":
+            filtered_df = filtered_df.sort_values(by="Runtime_Min", ascending=True)
+        elif sort_option == "IMDb Rating: Highest First":
+            filtered_df = filtered_df.sort_values(by="IMDB_Rating", ascending=False)
+        else:
+            filtered_df = filtered_df.sort_values(by="Rank", ascending=True)
 
         st.markdown(f"<p style='color:#FFC72C; font-size:1.1rem; font-weight:bold; margin-top:15px;'>Showing <b>{len(filtered_df)}</b> films matching your filters</p>", unsafe_allow_html=True)
 
