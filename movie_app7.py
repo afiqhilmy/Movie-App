@@ -395,7 +395,7 @@ if st.session_state.current_tab == "🎬 Movie Catalog":
         """, unsafe_allow_html=True)
         
         # REQUIREMENT 1: DIRECT FILTER SECTION WITH SORTING CONTROL
-        st.markdown("### 🍿 Catalog Filters & Search")
+        st.markdown("### 🍿 Find a movie")
         
         search_query = st.text_input("🔍 Search Movies by Title, Director, or Actor", "")
         
