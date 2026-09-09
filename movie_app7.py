@@ -237,12 +237,6 @@ st.markdown("""
         border-color: #FFC72C !important;
     }
 
-    /* 4. Slider value text numbers (e.g., 1930, 2019, 7.50) */
-    div[data-testid="stSlider"] [data-testid="stMarkdownContainer"] p {
-        color: #FFC72C !important;
-    }
-
-
 
     
 </style>
