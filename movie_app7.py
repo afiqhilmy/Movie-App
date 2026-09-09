@@ -220,23 +220,28 @@ st.markdown("""
         font-weight: bold;
     }
 
-    /* 1. Multiselect tag background & text */
+        /* 1. Multiselect Selected Tag ("Action") */
     span[data-baseweb="tag"] {
         background-color: #FFC72C !important;
         color: #000000 !important;
     }
-
-    /* 2. Slider fill track color */
+    
+    /* 2. Slider Active Bar */
     div[data-baseweb="slider"] div[aria-hidden="true"] > div {
         background-color: #FFC72C !important;
     }
-
-    /* 3. Slider handle (circle) color */
+    
+    /* 3. Slider Handle/Knob */
     div[data-baseweb="slider"] div[role="slider"] {
         background-color: #FFC72C !important;
         border-color: #FFC72C !important;
     }
-
+    
+    /* 4. Slider Numbers (1930, 2019, 7.50) */
+    div[data-testid="stSlider"] [data-testid="stMarkdownContainer"] p,
+    div[data-testid="stSlider"] div {
+        color: #FFC72C !important;
+    }
 
     
 </style>
