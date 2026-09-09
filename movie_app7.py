@@ -9,7 +9,7 @@ import re
 # 1. STREAMLIT CONFIG & CUSTOM CSS (GSC BRANDING & WATERMARKS)
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="itspeak cinema | Peak Film Vault",
+    page_title="Itspeak cinema | Peak Film Vault",
     page_icon="🎬",
     layout="wide"
 )
@@ -299,12 +299,12 @@ if 'current_tab' not in st.session_state:
 # -----------------------------------------------------------------------------
 # 4. HEADER WATERMARK
 # -----------------------------------------------------------------------------
-st.markdown('<div class="header-watermark">MOVIE APP BY AFIQ HILMY | MOVIE ENTHUSIAST</div>', unsafe_allow_html=True)
+st.markdown('<div class="header-watermark">MOVIE APP BY AFIQ HILMY | DATA ANALYTICS | MOVIE ENTHUSIAST</div>', unsafe_allow_html=True)
 
 # -----------------------------------------------------------------------------
 # 5. SIDEBAR NAVIGATION
 # -----------------------------------------------------------------------------
-st.sidebar.markdown("<h2 style='color:#FFC72C; text-align:center;'>ITSPEAK CINEMA</h2>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='color:#FFC72C; text-align:center;'>ITS PEAK CINEMA</h2>", unsafe_allow_html=True)
 
 nav_selection = st.sidebar.radio(
     "Navigate", 
@@ -392,7 +392,7 @@ if st.session_state.current_tab == "🎬 Movie Catalog":
                     <path d="M19.82 2H4.18C2.97 2 2 2.97 2 4.18v15.64C2 21.03 2.97 22 4.18 22h15.64c1.21 0 2.18-.97 2.18-2.18V4.18C22 2.97 21.03 2 19.82 2z"></path>
                     <path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"></path>
                 </svg>
-                <h1 class="gsc-title">ITSPEAK CINEMA</h1>
+                <h1 class="gsc-title">IT'S PEAK CINEMA</h1>
             </div>
             <div class="gsc-subtitle">Discover peak cinema & top tier films from the IMDB top movies ranking</div>
         </div>
