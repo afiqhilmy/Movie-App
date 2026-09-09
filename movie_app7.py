@@ -219,6 +219,23 @@ st.markdown("""
         color: #000000 !important;
         font-weight: bold;
     }
+
+    /* 1. Slider active bar (filled line) */
+    div[data-testid="stSlider"] div[aria-hidden="true"] > div {
+        background-color: #FFC72C !important;
+    }
+
+    /* 2. Slider handle (circle knob) */
+    div[data-testid="stSlider"] div[role="slider"] {
+        background-color: #FFC72C !important;
+        border-color: #FFC72C !important;
+    }
+
+    /* 3. Slider numbers & labels */
+    div[data-testid="stSlider"] [data-testid="stMarkdownContainer"] p,
+    div[data-testid="stSlider"] div[data-testid="stTickBar"] + div {
+        color: #FFC72C !important;
+    }
     
 </style>
 """, unsafe_allow_html=True)
