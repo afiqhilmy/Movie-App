@@ -219,6 +219,32 @@ st.markdown("""
         color: #000000 !important;
         font-weight: bold;
     }
+
+    /* 1. Multiselect tag background & text */
+    span[data-baseweb="tag"] {
+        background-color: #FFC72C !important;
+        color: #000000 !important;
+    }
+
+    /* 2. Slider fill track color */
+    div[data-baseweb="slider"] div[aria-hidden="true"] > div {
+        background-color: #FFC72C !important;
+    }
+
+    /* 3. Slider handle (circle) color */
+    div[data-baseweb="slider"] div[role="slider"] {
+        background-color: #FFC72C !important;
+        border-color: #FFC72C !important;
+    }
+
+    /* 4. Slider value text numbers (e.g., 1930, 2019, 7.50) */
+    div[data-testid="stSlider"] [data-testid="stMarkdownContainer"] p {
+        color: #FFC72C !important;
+    }
+
+
+
+    
 </style>
 """, unsafe_allow_html=True)
 
