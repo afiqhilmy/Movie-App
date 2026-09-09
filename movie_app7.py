@@ -197,7 +197,7 @@ st.markdown("""
         margin-bottom: 25px;
     }
 
-    /* Tabs Styling */
+/* Tabs Styling */
     .stTabs [data-baseweb="tab-list"] {
         gap: 12px;
     }
@@ -207,7 +207,11 @@ st.markdown("""
         color: #FFFFFF;
         border-radius: 6px 6px 0px 0px;
         border: 1px solid #2a2a2a;
-        padding: 10px 20px;
+        padding: 10px 28px !important; /* Increased side padding */
+    }
+
+    .stTabs [data-baseweb="tab"] p {
+        padding: 0 6px !important; /* Gives text horizontal breathing space */
     }
 
     .stTabs [aria-selected="true"] {
